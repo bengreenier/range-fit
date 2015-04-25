@@ -29,12 +29,17 @@ module.exports = function (value, lowerInitial, upperInitial, lowerNew, upperNew
 	tsn(lowerNew, "lowerNew");
 	tsn(upperNew, "upperNew");
 
-	// do fitting and return
+	// create old range, and check if it's nonexistent
 	var OldRange = upperInitial - lowerInitial;
 	if (OldRange === 0) {
 		return lowerNew;
-	} else {
-		var NewRange = upperNew - lowerNew;
-		return (((value - lowerInitial) * NewRange) / OldRange) + lowerNew;
 	}
+
+	// if we're still here, check lowerInitial<=value<=upperInitial
+	assert(lowerInitial<=value, "range-fit expects lowerInitial<=value");
+	assert(upperInitial>=value, "range-fit expects upperInitial>=value");
+
+	// if we're still here, do new range mapping
+	var NewRange = upperNew - lowerNew;
+	return (((value - lowerInitial) * NewRange) / OldRange) + lowerNew;
 }

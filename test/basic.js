@@ -11,6 +11,28 @@ describe('range-fit', function() {
   	assert(20 === rangeFit(10, 0, 100, 0, 200), "should return 20");
   });
 
+  it("should throw if lowerInitial>value", function() {
+
+  	assert.throws(function() {
+		rangeFit(15, 20, 30, 0, 0);
+	}, function(err) {
+		if ((err instanceof Error) && /expects lowerInitial<=value/.test(err)) {
+			return true;
+		}
+	});
+  });
+
+  it("should throw if upperInitial<value", function() {
+
+  	assert.throws(function() {
+		rangeFit(15, 5, 10, 0, 0);
+	}, function(err) {
+		if ((err instanceof Error) && /expects upperInitial>=value/.test(err)) {
+			return true;
+		}
+	});
+  });
+
   describe('#(value,...)', function() {
     it("should throw if !Number", function() {
     	

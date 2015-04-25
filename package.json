@@ -1,6 +1,6 @@
 {
   "name": "range-fit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "given a number and two ranges, fit from one range to another",
   "main": "index.js",
   "scripts": {
