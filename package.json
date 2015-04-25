@@ -1,0 +1,27 @@
+{
+  "name": "range-fit",
+  "version": "0.1.0",
+  "description": "given a number and two ranges, fit from one range to another",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bengreenier/range-fit.git"
+  },
+  "keywords": [
+    "map",
+    "range",
+    "convert"
+  ],
+  "author": "Ben Greenier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bengreenier/range-fit/issues"
+  },
+  "homepage": "https://github.com/bengreenier/range-fit",
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  }
+}
